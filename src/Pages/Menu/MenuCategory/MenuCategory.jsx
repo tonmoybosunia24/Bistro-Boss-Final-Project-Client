@@ -3,13 +3,14 @@ import MenuItem from "../../Shared/MenuItem/MenuItem";
 
 const MenuCategory = ({ items, coverImg, title, subTitle }) => {
        return (
-              <div className="mb-20">
-                     {title && <Cover classname='mb-10 lg:h-96' img={coverImg} title={title} subTitle={subTitle}></Cover>}
+              <div className="pb-12">
+                     {title && <Cover classname='lg:h-96 mb-12' img={coverImg} title={title} subTitle={subTitle}></Cover>}
                      <div className="grid md:grid-cols-2 gap-5">
                             {
                                    items.map(item => <MenuItem key={item._id} item={item}></MenuItem>)
                             }
                      </div>
+                     <button className="block mx-auto mt-7 px-4 pb-2 font-semibold border-b-2 border-black dark:border-white rounded-xl text-sm">ORDER YOUR FAVOURITE FOOD</button>
               </div>
        );
 };

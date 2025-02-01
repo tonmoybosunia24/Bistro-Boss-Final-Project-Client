@@ -5,10 +5,10 @@ import useMenu from "../../../Hooks/useMenu";
 
 const PopularMenu = () => {
 
-       const [menu, loading] = useMenu()
+       const [menu] = useMenu()
        const popular = menu.filter(item => item.category === 'popular')
        return (
-              <section className="mb-20">
+              <section>
                      <SectionTitle subHeading={'---Check it out---'} heading={'FROM OUR MENU'}></SectionTitle>
                      <div className="grid md:grid-cols-2 gap-5">
                             {

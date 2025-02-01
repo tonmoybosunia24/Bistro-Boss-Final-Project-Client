@@ -2,7 +2,7 @@ const Cover = ({ img, title, subTitle, classname }) => {
        return (
 
               <div
-                     className={`${classname} flex justify-center items-center w-full  aspect-[16/9] lg:aspect-auto bg-cover`}
+                     className={`${classname} flex justify-center items-center w-full aspect-[16/9] lg:aspect-auto bg-cover bg-center`}
                      style={{
                             backgroundImage: `url(${img})`,
                      }}>

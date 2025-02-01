@@ -43,12 +43,12 @@ const Banner = () => {
                             }}
                             pagination={{ clickable: true }}
                      >
-                            <SwiperSlide><img src={Banner1} className='w-full max-h-screen object-cover' alt="" /></SwiperSlide>
-                            <SwiperSlide><img src={Banner2} className='w-full max-h-screen object-cover' alt="" /></SwiperSlide>
-                            <SwiperSlide><img src={Banner3} className='w-full max-h-screen object-cover' alt="" /></SwiperSlide>
-                            <SwiperSlide><img src={Banner4} className='w-full max-h-screen object-cover' alt="" /></SwiperSlide>
-                            <SwiperSlide><img src={Banner5} className='w-full max-h-screen object-cover' alt="" /></SwiperSlide>
-                            <SwiperSlide><img src={Banner6} className='w-full max-h-screen object-cover' alt="" /></SwiperSlide>
+                            <SwiperSlide><img src={Banner1} className='w-full' alt="" /></SwiperSlide>
+                            <SwiperSlide><img src={Banner2} className='w-full' alt="" /></SwiperSlide>
+                            <SwiperSlide><img src={Banner3} className='w-full' alt="" /></SwiperSlide>
+                            <SwiperSlide><img src={Banner4} className='w-full' alt="" /></SwiperSlide>
+                            <SwiperSlide><img src={Banner5} className='w-full' alt="" /></SwiperSlide>
+                            <SwiperSlide><img src={Banner6} className='w-full' alt="" /></SwiperSlide>
                      </Swiper>
               </div>
        );

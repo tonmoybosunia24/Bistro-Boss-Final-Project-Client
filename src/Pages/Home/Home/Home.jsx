@@ -11,7 +11,7 @@ import Testimonials from "../Testimonials/Testimonials";
 
 const Home = () => {
        return (
-              <div className="dark:bg-[#121212] dark:text-white">
+              <div className="dark:bg-[#111827] dark:text-white">
                      <NavBar className='sticky top-0 left-0 z-20'></NavBar>
                      <Banner></Banner>
                      <div className="lg:max-w-screen-lg mx-auto px-5 lg:px-0">
