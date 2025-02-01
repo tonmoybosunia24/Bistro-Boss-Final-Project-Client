@@ -8,7 +8,7 @@ const AuthProviders = ({children}) => {
 
        const auth = getAuth(app)
        const [user, setUser] = useState(null)
-       const [loading, setLoading] = useState(false)
+       const [loading, setLoading] = useState(true)
 
        const AuthValue = {user, setUser, loading, setLoading}
 

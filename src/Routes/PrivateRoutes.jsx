@@ -10,7 +10,7 @@ const PrivateRoutes = ({children}) => {
               return <span className="loading loading-spinner text-error flex items-center m-auto min-h-screen"></span>;
        }
        else if(user){
-              {children}
+              return children;
        }
        return <Navigate to='/login'></Navigate>
 };
