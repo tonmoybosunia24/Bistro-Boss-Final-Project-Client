@@ -1,6 +1,5 @@
 const Cover = ({ img, title, subTitle, classname }) => {
        return (
-
               <div
                      className={`${classname} flex justify-center items-center w-full aspect-[16/9] lg:aspect-auto bg-cover bg-center`}
                      style={{
@@ -11,7 +10,6 @@ const Cover = ({ img, title, subTitle, classname }) => {
                             <p className="">{subTitle}</p>
                      </div>
               </div>
-
        );
 };
 

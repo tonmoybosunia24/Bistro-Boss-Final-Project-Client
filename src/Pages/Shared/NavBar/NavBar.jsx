@@ -72,8 +72,8 @@ const NavBar = ({ className }) => {
                             {
                                    open ? <IoMdCloseCircle className="text-3xl" onClick={handleHamburgerMenu} /> : <AiOutlineMenu className="text-2xl" onClick={handleHamburgerMenu} />
                             }
-                            <div className="w-full flex justify-between">
-                                   <h2 className="ml-2 font-semibold text-xl">BISTRO BOSS</h2>
+                            <div className="w-full flex justify-between items-center">
+                                   <h2 className="ml-2 font-semibold text-md">BISTRO BOSS</h2>
                                    <div className={`w-52 min-h-screen absolute duration-200 bg-orange-800  text-black p-6 z-50 ${open ? 'top-0 left-0' : 'top-0 -left-52'}`}>
                                           <div className="flex justify-between items-center mb-2">
                                                  <h2 className="font-semibold">BISTRO BOSS</h2>
