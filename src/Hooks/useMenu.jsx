@@ -3,9 +3,9 @@ import { AuthContext } from "../Providers/AuthProviders";
 
 const useMenu = () => {
        const [menu, setMenu] = useState([])
-       const {loading, setLoading} = useContext(AuthContext)
+       const { loading, setLoading } = useContext(AuthContext)
        useEffect(() => {
-              fetch('menu.json')
+              fetch('http://localhost:5000/menu')
                      .then(res => res.json())
                      .then(data => {
                             setMenu(data)

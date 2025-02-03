@@ -2,11 +2,10 @@ import { createBrowserRouter } from "react-router";
 import Root from "../Layouts/Root/Root";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Contact from "../Pages/Contact/Contact";
-import Shop from "../Pages/Shop/Shop";
 import Login from "../Pages/Login/Login";
-import PrivateRoutes from "./PrivateRoutes";
 import Home from "../Pages/Home/Home/Home";
 import Menu from "../Pages/Menu/Menu/Menu";
+import Orders from "../Pages/Orders/Orders/Orders";
 
 const Routes = createBrowserRouter([
        {
@@ -27,8 +26,8 @@ const Routes = createBrowserRouter([
                             element: <Contact></Contact>
                      },
                      {
-                            path: '/shop',
-                            element: <PrivateRoutes><Shop></Shop></PrivateRoutes>
+                            path: '/orders/:category',
+                            element: <Orders></Orders>
                      },
                      {
                             path: '/login',

@@ -15,7 +15,7 @@ const NavBar = ({ className }) => {
               <li><NavLink className={({ isActive }) => `!bg-transparent ${isActive ? 'font-bold text-yellow-300' : 'text-white'}`} to='/'>Home</NavLink></li>
               <li><NavLink className={({ isActive }) => `!bg-transparent ${isActive ? 'font-bold text-yellow-300' : 'text-white'}`} to='/contact'>Contact Us</NavLink></li>
               <li><NavLink className={({ isActive }) => `!bg-transparent ${isActive ? 'font-bold text-yellow-300' : 'text-white'}`} to='/ourMenu'>Our Menu</NavLink></li>
-              <li><NavLink className={({ isActive }) => `!bg-transparent ${isActive ? 'font-bold text-yellow-300' : 'text-white'}`} to='/shop'>Our Shop</NavLink></li>
+              <li><NavLink className={({ isActive }) => `!bg-transparent ${isActive ? 'font-bold text-yellow-300' : 'text-white'}`} to='/orders/Salad'>Order Food</NavLink></li>
               <li><NavLink className={({ isActive }) => `!bg-transparent ${isActive ? 'font-bold text-yellow-300' : 'text-white'}`} to='/login'>Login</NavLink></li>
        </>
        const handleHamburgerMenu = () => {
