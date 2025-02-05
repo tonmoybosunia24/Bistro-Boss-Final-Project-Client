@@ -5,17 +5,19 @@ import { FaRegCircleUser } from "react-icons/fa6";
 import { CiShoppingBasket } from "react-icons/ci";
 import { CiLight } from "react-icons/ci";
 import { MdDarkMode } from "react-icons/md";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../../Providers/AuthProviders";
 
 const NavBar = ({ className }) => {
 
        const [open, setOpen] = useState(false)
        const [dark, setDark] = useState(false)
+       const { user, Logout } = useContext(AuthContext)
        const Links = <>
               <li><NavLink className={({ isActive }) => `!bg-transparent ${isActive ? 'font-bold text-yellow-300' : 'text-white'}`} to='/'>Home</NavLink></li>
-              <li><NavLink className={({ isActive }) => `!bg-transparent ${isActive ? 'font-bold text-yellow-300' : 'text-white'}`} to='/contact'>Contact Us</NavLink></li>
               <li><NavLink className={({ isActive }) => `!bg-transparent ${isActive ? 'font-bold text-yellow-300' : 'text-white'}`} to='/ourMenu'>Our Menu</NavLink></li>
               <li><NavLink className={({ isActive }) => `!bg-transparent ${isActive ? 'font-bold text-yellow-300' : 'text-white'}`} to='/orders/Salad'>Order Food</NavLink></li>
+              <li><NavLink className={({ isActive }) => `!bg-transparent ${isActive ? 'font-bold text-yellow-300' : 'text-white'}`} to='/contact'>Contact Us</NavLink></li>
               <li><NavLink className={({ isActive }) => `!bg-transparent ${isActive ? 'font-bold text-yellow-300' : 'text-white'}`} to='/login'>Login</NavLink></li>
        </>
        const handleHamburgerMenu = () => {
@@ -44,6 +46,16 @@ const NavBar = ({ className }) => {
               }
        }, [setDark])
 
+       const handleLogOut = () => {
+              Logout()
+                     .then(() => {
+                            toast.success('Logout Successful')
+                     })
+                     .catch(error => {
+                            toast.error(error.message)
+                     })
+       }
+
        return (
               <nav className={`${className}`}>
                      <div className="hidden lg:flex max-w-screen-xl mx-auto fixed top-0 left-0 right-0 justify-between items-center bg-black bg-opacity-50 px-5 py-2 text-white ">
@@ -64,7 +76,7 @@ const NavBar = ({ className }) => {
                                    {
                                           dark ? <MdDarkMode onClick={handleDark} className="text-3xl" /> : <CiLight onClick={handleDark} className="text-3xl" />
                                    }
-                                   <button>Sign Out</button>
+                                   {user ? <button onClick={handleLogOut}>Sign Out</button> : <NavLink to='/login'>Sign In</NavLink>}
                                    <FaRegCircleUser className="text-2xl" />
                             </div>
                      </div>
@@ -91,7 +103,7 @@ const NavBar = ({ className }) => {
                                           {
                                                  dark ? <MdDarkMode onClick={handleDark} className="text-3xl" /> : <CiLight onClick={handleDark} className="text-3xl" />
                                           }
-                                          <button>Sign Out</button>
+                                          {user ? <button onClick={handleLogOut}>Sign Out</button> : <NavLink to='/login'>Sign In</NavLink>}
                                           <FaRegCircleUser className="text-2xl" />
                                    </div>
                             </div>
