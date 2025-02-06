@@ -1,13 +1,14 @@
 import { createBrowserRouter } from "react-router";
 import Root from "../Layouts/Root/Root";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
-import Contact from "../Pages/Contact/Contact";
+import ContactUs from "../Pages/ContactUs/ContactUs/ContactUs";
 import Login from "../Pages/Login/Login";
 import Home from "../Pages/Home/Home/Home";
 import Menu from "../Pages/Menu/Menu/Menu";
 import Orders from "../Pages/Orders/Orders/Orders";
 import Register from "../Pages/Register/Register";
 import PrivateRoutes from "./PrivateRoutes";
+
 
 const Routes = createBrowserRouter([
        {
@@ -25,7 +26,7 @@ const Routes = createBrowserRouter([
                      },
                      {
                             path: '/contact',
-                            element: <Contact></Contact>
+                            element: <ContactUs></ContactUs>
                      },
                      {
                             path: '/orders/:category',
