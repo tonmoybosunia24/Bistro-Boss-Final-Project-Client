@@ -7,6 +7,8 @@ import { CiLight } from "react-icons/ci";
 import { MdDarkMode } from "react-icons/md";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Providers/AuthProviders";
+import { toast } from "react-toastify";
+import { ImGift } from "react-icons/im";
 
 const NavBar = ({ className }) => {
 
@@ -18,7 +20,6 @@ const NavBar = ({ className }) => {
               <li><NavLink className={({ isActive }) => `!bg-transparent ${isActive ? 'font-bold text-yellow-300' : 'text-white'}`} to='/ourMenu'>Our Menu</NavLink></li>
               <li><NavLink className={({ isActive }) => `!bg-transparent ${isActive ? 'font-bold text-yellow-300' : 'text-white'}`} to='/orders/Salad'>Order Food</NavLink></li>
               <li><NavLink className={({ isActive }) => `!bg-transparent ${isActive ? 'font-bold text-yellow-300' : 'text-white'}`} to='/contact'>Contact Us</NavLink></li>
-              <li><NavLink className={({ isActive }) => `!bg-transparent ${isActive ? 'font-bold text-yellow-300' : 'text-white'}`} to='/login'>Login</NavLink></li>
        </>
        const handleHamburgerMenu = () => {
               setOpen(!open)
@@ -77,7 +78,7 @@ const NavBar = ({ className }) => {
                                           dark ? <MdDarkMode onClick={handleDark} className="text-3xl" /> : <CiLight onClick={handleDark} className="text-3xl" />
                                    }
                                    {user ? <button onClick={handleLogOut}>Sign Out</button> : <NavLink to='/login'>Sign In</NavLink>}
-                                   <FaRegCircleUser className="text-2xl" />
+                                   {user?.photoURL ? <img src={user.photoURL} alt="User" className="w-7 h-7 rounded-full border border-white" /> : <FaRegCircleUser className="text-2xl" />}
                             </div>
                      </div>
                      <div className="lg:hidden flex w-full items-center bg-gray-800  text-white px-5 py-3">
@@ -104,7 +105,7 @@ const NavBar = ({ className }) => {
                                                  dark ? <MdDarkMode onClick={handleDark} className="text-3xl" /> : <CiLight onClick={handleDark} className="text-3xl" />
                                           }
                                           {user ? <button onClick={handleLogOut}>Sign Out</button> : <NavLink to='/login'>Sign In</NavLink>}
-                                          <FaRegCircleUser className="text-2xl" />
+                                          {user?.photoURL ? <img src={user.photoURL} alt="User" className="w-7 h-7 rounded-full border border-white" /> : <FaRegCircleUser className="text-2xl" />}
                                    </div>
                             </div>
                      </div>
