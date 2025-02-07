@@ -54,7 +54,7 @@ const ContactForm = () => {
                                           <textarea name="message" cols='5' rows='4' {...register("message")} placeholder="Enter Your Message" className="textarea textarea-bordered" required></textarea>
                                    </div>
                                    <div className="form-control col-span-2 my-3">
-                                          <input className="btn text-white bg-gradient-to-r from-[#835D23] to-[#B58130]" type="submit" value="Sign In" />
+                                          <input className="btn text-white bg-gradient-to-r from-[#835D23] to-[#B58130]" type="submit" value="Message Us" />
                                    </div>
                             </form>
                      </div>
