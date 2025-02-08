@@ -14,6 +14,7 @@ const Login = () => {
        const { LoginUser } = useContext(AuthContext)
        const location = useLocation();
        const navigate = useNavigate();
+       const from = location.state?.from?.pathname || "/";
 
        const handleLogin = (e) => {
               e.preventDefault();
@@ -24,7 +25,7 @@ const Login = () => {
                      .then(userCredential => {
                             const user = userCredential.user;
                             toast.success('Login Successful')
-                            navigate(location?.state ? location.state : '/')
+                            navigate(location?.state ? from : '/')
                      })
                      .catch(error => {
                             toast.error(error.message)

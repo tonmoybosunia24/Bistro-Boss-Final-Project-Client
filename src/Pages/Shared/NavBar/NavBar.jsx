@@ -9,12 +9,14 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Providers/AuthProviders";
 import { toast } from "react-toastify";
 import { ImGift } from "react-icons/im";
+import useCart from "../../../Hooks/useCart";
 
 const NavBar = ({ className }) => {
 
        const [open, setOpen] = useState(false)
        const [dark, setDark] = useState(false)
        const { user, Logout } = useContext(AuthContext)
+       const [cart] = useCart()
        const Links = <>
               <li><NavLink className={({ isActive }) => `!bg-transparent ${isActive ? 'font-bold text-yellow-300' : 'text-white'}`} to='/'>Home</NavLink></li>
               <li><NavLink className={({ isActive }) => `!bg-transparent ${isActive ? 'font-bold text-yellow-300' : 'text-white'}`} to='/ourMenu'>Our Menu</NavLink></li>
@@ -71,7 +73,7 @@ const NavBar = ({ className }) => {
                             </div>
                             <div className="flex items-center gap-3">
                                    <div className="indicator">
-                                          <span className="indicator-item indicator-start badge text-red-700 border-none px-2 py-3">2</span>
+                                          <span className="indicator-item indicator-start badge text-red-700 border-none px-2 py-3">{cart?.length}</span>
                                           <div className=" place-items-center"><CiShoppingBasket className="text-3xl" /></div>
                                    </div>
                                    {
@@ -98,7 +100,7 @@ const NavBar = ({ className }) => {
                                    </div>
                                    <div className="flex items-center gap-2">
                                           <div className="indicator">
-                                                 <span className="indicator-item indicator-start badge text-red-700 border-none px-2 py-3">2</span>
+                                                 <span className="indicator-item indicator-start badge text-red-700 border-none px-2 py-3">{cart?.length}</span>
                                                  <div className=" place-items-center"><CiShoppingBasket className="text-3xl" /></div>
                                           </div>
                                           {
