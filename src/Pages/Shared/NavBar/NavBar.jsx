@@ -1,4 +1,4 @@
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import { AiOutlineMenu } from "react-icons/ai";
 import { IoMdCloseCircle } from "react-icons/io";
 import { FaRegCircleUser } from "react-icons/fa6";
@@ -72,10 +72,12 @@ const NavBar = ({ className }) => {
                                    </ul>
                             </div>
                             <div className="flex items-center gap-3">
-                                   <div className="indicator">
-                                          <span className="indicator-item indicator-start badge text-red-700 border-none px-2 py-3">{cart?.length}</span>
-                                          <div className=" place-items-center"><CiShoppingBasket className="text-3xl" /></div>
-                                   </div>
+                                   <Link to='/dashboard/cart'>
+                                          <div className="indicator">
+                                                 <span className="indicator-item indicator-start badge text-red-700 border-none px-2 py-3">{cart?.length}</span>
+                                                 <div className=" place-items-center"><CiShoppingBasket className="text-3xl" /></div>
+                                          </div>
+                                   </Link>
                                    {
                                           dark ? <MdDarkMode onClick={handleDark} className="text-3xl" /> : <CiLight onClick={handleDark} className="text-3xl" />
                                    }
@@ -99,10 +101,12 @@ const NavBar = ({ className }) => {
                                           </ul>
                                    </div>
                                    <div className="flex items-center gap-2">
-                                          <div className="indicator">
-                                                 <span className="indicator-item indicator-start badge text-red-700 border-none px-2 py-3">{cart?.length}</span>
-                                                 <div className=" place-items-center"><CiShoppingBasket className="text-3xl" /></div>
-                                          </div>
+                                          <Link to='/dashboard/cart'>
+                                                 <div className="indicator">
+                                                        <span className="indicator-item indicator-start badge text-red-700 border-none px-2 py-3">{cart?.length}</span>
+                                                        <div className=" place-items-center"><CiShoppingBasket className="text-3xl" /></div>
+                                                 </div>
+                                          </Link>
                                           {
                                                  dark ? <MdDarkMode onClick={handleDark} className="text-3xl" /> : <CiLight onClick={handleDark} className="text-3xl" />
                                           }
