@@ -8,22 +8,38 @@ import { AuthContext } from "../../Providers/AuthProviders";
 import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet-async";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 const Register = () => {
 
        const { CreateUser, updateUserProfile } = useContext(AuthContext)
+       const axiosPublic = useAxiosPublic()
        const location = useLocation();
        const navigate = useNavigate();
+       const from = location.state?.from?.pathname || "/";
        const { register, handleSubmit, formState: { errors }, } = useForm()
        const onSubmit = (data) => {
               CreateUser(data.email, data.password)
                      .then(userCredential => {
                             const user = userCredential.user;
+                            console.log(user)
                             toast.success('Register Successful')
-                            navigate(location?.state ? location.state : '/')
+                            navigate(location?.state ? from : '/')
                             updateUserProfile(data.name, data.PhotoUrl)
                                    .then(() => {
-                                          toast.success('Profile Updated Successfully')
+                                          const userInfo = {
+                                                 name: data.name,
+                                                 email: data.email,
+                                                 password: data.password,
+                                                 PhotoUrl: data.PhotoUrl,
+                                                 emailVerified: user.emailVerified
+                                          }
+                                          axiosPublic.post('/users', userInfo)
+                                          .then(res => {
+                                                 if(res.data.insertedId){
+                                                        toast.success('Profile Updated Successfully')
+                                                 }
+                                          })
                                    })
                                    .catch(error => {
                                           toast.error(error.message)
