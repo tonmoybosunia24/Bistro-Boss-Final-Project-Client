@@ -2,8 +2,8 @@ import { toast } from "react-toastify";
 import useAuth from "../../../Hooks/useAuth";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router";
-import useAxios from "../../../Hooks/useAxios";
 import useCart from "../../../Hooks/useCart";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 
 const FoodCard = ({ item }) => {
 
@@ -11,7 +11,7 @@ const FoodCard = ({ item }) => {
        const location = useLocation();
        const navigate = useNavigate();
        const { user } = useAuth();
-       const axios = useAxios();
+       const axios = useAxiosSecure();
        const [, refetch] = useCart()
 
        const handleAddToCart = () => {

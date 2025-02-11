@@ -1,13 +1,13 @@
 import { FaTrashAlt } from "react-icons/fa";
 import useCart from "../../../Hooks/useCart";
 import Swal from "sweetalert2";
-import useAxios from "../../../Hooks/useAxios";
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 
 const Cart = () => {
 
        const [cart, refetch] = useCart();
-       const axiosSecure = useAxios();
+       const axiosSecure = useAxiosSecure();
        const totalPrice = parseFloat(cart.reduce((sum, item) => sum + item.price, 0).toFixed(2));
 
        const handleDelete = (id) => {
