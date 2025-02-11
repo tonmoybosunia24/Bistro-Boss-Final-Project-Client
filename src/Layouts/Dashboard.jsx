@@ -9,6 +9,7 @@ import { NavLink, Outlet } from "react-router";
 const Dashboard = () => {
 
        const [open, setOpen] = useState(false)
+       const isAdmin = true;
        const handleHamburgerMenu = () => {
               setOpen(!open)
        }
@@ -29,7 +30,9 @@ const Dashboard = () => {
                                    <li><NavLink className={({ isActive }) => `!bg-transparent font-cinzel flex items-center gap-2 ${isActive ? 'font-bold text-white' : 'text-black'}`} to='/dashboard/cart'><FaShoppingCart className="text-xl"></FaShoppingCart> My Cart</NavLink></li>
                                    <li><NavLink className={({ isActive }) => `!bg-transparent font-cinzel flex items-center gap-2 ${isActive ? 'font-bold text-white' : 'text-black'}`} to='/dashboard/addReview'><MdMessage className="text-xl"></MdMessage>Add Review</NavLink></li>
                                    <li><NavLink className={({ isActive }) => `!bg-transparent font-cinzel flex items-center gap-2 ${isActive ? 'font-bold text-white' : 'text-black'}`} to='/dashboard/myBooking'><IoCalendarNumberSharp className="text-xl"></IoCalendarNumberSharp>My Booking</NavLink></li>
+
                                    <div className="divider"></div>
+
                                    <li><NavLink className={({ isActive }) => `!bg-transparent font-cinzel flex items-center gap-2 ${isActive ? 'font-bold text-white' : 'text-black'}`} to='/'><IoHome className="text-xl"></IoHome>Home</NavLink></li>
                                    <li><NavLink className={({ isActive }) => `!bg-transparent font-cinzel flex items-center gap-2 ${isActive ? 'font-bold text-white' : 'text-black'}`} to='/ourMenu'><RxHamburgerMenu className="text-xl"></RxHamburgerMenu>Menu</NavLink></li>
                                    <li><NavLink className={({ isActive }) => `!bg-transparent font-cinzel flex items-center gap-2 ${isActive ? 'font-bold text-white' : 'text-black'}`} to='/orders/Salad'><FaBagShopping className="text-xl"></FaBagShopping>Shop</NavLink></li>
@@ -45,7 +48,9 @@ const Dashboard = () => {
                                           <li><NavLink className={({ isActive }) => `!bg-transparent font-cinzel p-0 pb-4 ${isActive ? 'font-bold text-white' : 'text-black'}`} to='/dashboard/cart'><FaShoppingCart className="text-xl"></FaShoppingCart></NavLink></li>
                                           <li><NavLink className={({ isActive }) => `!bg-transparent font-cinzel p-0 pb-4 ${isActive ? 'font-bold text-white' : 'text-black'}`} to='/dashboard/addReview'><MdMessage className="text-xl"></MdMessage></NavLink></li>
                                           <li><NavLink className={({ isActive }) => `!bg-transparent font-cinzel p-0 pb-4 ${isActive ? 'font-bold text-white' : 'text-black'}`} to='/dashboard/myBooking'><IoCalendarNumberSharp className="text-xl"></IoCalendarNumberSharp></NavLink></li>
+
                                           <div className="divider"></div>
+
                                           <li><NavLink className={({ isActive }) => `!bg-transparent font-cinzel p-0 pb-4 ${isActive ? 'font-bold text-white' : 'text-black'}`} to='/'><IoHome className="text-xl"></IoHome></NavLink></li>
                                           <li><NavLink className={({ isActive }) => `!bg-transparent font-cinzel p-0 pb-4 ${isActive ? 'font-bold text-white' : 'text-black'}`} to='/ourMenu'><RxHamburgerMenu className="text-xl"></RxHamburgerMenu></NavLink></li>
                                           <li><NavLink className={({ isActive }) => `!bg-transparent font-cinzel p-0 pb-4 ${isActive ? 'font-bold text-white' : 'text-black'}`} to='/orders/Salad'><FaBagShopping className="text-xl"></FaBagShopping></NavLink></li>

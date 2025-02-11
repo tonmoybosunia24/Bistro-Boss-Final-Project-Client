@@ -1,7 +1,4 @@
 import { Link, useLocation, useNavigate } from "react-router";
-import { FaFacebookSquare } from "react-icons/fa";
-import { FaGoogle } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
 import loginLogo from "../../assets/others/authentication2.png"
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
@@ -9,6 +6,7 @@ import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet-async";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import SocialLogin from "../../Components/SocialLogin/SocialLogin";
 
 const Register = () => {
 
@@ -22,7 +20,6 @@ const Register = () => {
               CreateUser(data.email, data.password)
                      .then(userCredential => {
                             const user = userCredential.user;
-                            console.log(user)
                             toast.success('Register Successful')
                             navigate(location?.state ? from : '/')
                             updateUserProfile(data.name, data.PhotoUrl)
@@ -94,11 +91,7 @@ const Register = () => {
                                                  </div>
                                                  <p className="text-center text-[#D5AA68] text-sm">Already Registered <Link className="font-semibold" to='/login'>Go to log in</Link></p>
                                                  <p className="text-center">Or sign in with</p>
-                                                 <div className="flex text-4xl justify-center gap-2 mt-2">
-                                                        <FaFacebookSquare className="p-2 rounded-full border-2 cursor-pointer" />
-                                                        <FaGoogle className="p-2 rounded-full border-2 cursor-pointer" />
-                                                        <FaGithub className="p-2 rounded-full border-2 cursor-pointer" />
-                                                 </div>
+                                                 <SocialLogin></SocialLogin>
                                           </form>
                                    </div>
                             </div>

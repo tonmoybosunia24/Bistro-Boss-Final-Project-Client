@@ -1,12 +1,10 @@
 import { useContext } from "react";
 import loginLogo from "../../assets/others/authentication2.png"
-import { FaFacebookSquare } from "react-icons/fa";
-import { FaGoogle } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../Providers/AuthProviders";
 import { toast } from "react-toastify";
 import { Helmet } from "react-helmet-async";
+import SocialLogin from "../../Components/SocialLogin/SocialLogin";
 
 
 const Login = () => {
@@ -63,11 +61,7 @@ const Login = () => {
                                                  </div>
                                                  <p className="text-center text-[#D5AA68] text-sm">New here? <Link className="font-semibold" to='/register'>Create a New Account</Link></p>
                                                  <p className="text-center">Or sign in with</p>
-                                                 <div className="flex text-4xl justify-center gap-2 mt-2">
-                                                        <FaFacebookSquare className="p-2 rounded-full border-2 cursor-pointer" />
-                                                        <FaGoogle className="p-2 rounded-full border-2 cursor-pointer" />
-                                                        <FaGithub className="p-2 rounded-full border-2 cursor-pointer" />
-                                                 </div>
+                                                 <SocialLogin></SocialLogin>
                                           </form>
                                    </div>
                             </div>
