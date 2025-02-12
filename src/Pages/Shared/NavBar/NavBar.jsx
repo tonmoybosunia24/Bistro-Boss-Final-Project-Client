@@ -10,17 +10,21 @@ import { AuthContext } from "../../../Providers/AuthProviders";
 import { toast } from "react-toastify";
 import { ImGift } from "react-icons/im";
 import useCart from "../../../Hooks/useCart";
+import useAdmin from "../../../Hooks/useAdmin";
 
 const NavBar = ({ className }) => {
 
        const [open, setOpen] = useState(false)
        const [dark, setDark] = useState(false)
        const { user, Logout } = useContext(AuthContext)
+       const [isAdmin] = useAdmin()
        const [cart] = useCart()
        const Links = <>
               <li><NavLink className={({ isActive }) => `!bg-transparent ${isActive ? 'font-bold text-yellow-300' : 'text-white'}`} to='/'>Home</NavLink></li>
               <li><NavLink className={({ isActive }) => `!bg-transparent ${isActive ? 'font-bold text-yellow-300' : 'text-white'}`} to='/ourMenu'>Our Menu</NavLink></li>
               <li><NavLink className={({ isActive }) => `!bg-transparent ${isActive ? 'font-bold text-yellow-300' : 'text-white'}`} to='/orders/Salad'>Order Food</NavLink></li>
+              {isAdmin && (<li><NavLink className={({ isActive }) => `!bg-transparent ${isActive ? 'font-bold text-yellow-300' : 'text-white'}`} to="/dashboard/adminHome">Dashboard</NavLink></li>
+              )}
               <li><NavLink className={({ isActive }) => `!bg-transparent ${isActive ? 'font-bold text-yellow-300' : 'text-white'}`} to='/contact'>Contact Us</NavLink></li>
        </>
        const handleHamburgerMenu = () => {

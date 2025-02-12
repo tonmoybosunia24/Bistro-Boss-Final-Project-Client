@@ -15,6 +15,10 @@ import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 import AddReviews from "../Pages/Dashboard/AddReviews/AddReviews";
 import MyBookings from "../Pages/Dashboard/MyBookings/MyBookings";
 import PrivateRoutes from "./PrivateRoutes";
+import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
+import AddItems from "../Pages/Dashboard/AddItems/AddItems";
+import ManageBookings from "../Pages/Dashboard/ManageBookings/ManageBookings";
+import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 
 
 const Routes = createBrowserRouter([
@@ -53,6 +57,24 @@ const Routes = createBrowserRouter([
               path: 'dashboard',
               element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
               children: [
+                     // Admin Routes
+                     {
+                            path: 'adminHome',
+                            element: <AdminHome></AdminHome>
+                     },
+                     {
+                            path: 'addItems',
+                            element: <AddItems></AddItems>
+                     },
+                     {
+                            path: 'manageBookings',
+                            element: <ManageBookings></ManageBookings>
+                     },
+                     {
+                            path: 'allUsers',
+                            element: <AllUsers></AllUsers>
+                     },
+                     // User Routes
                      {
                             path: 'cart',
                             element: <Cart></Cart>
