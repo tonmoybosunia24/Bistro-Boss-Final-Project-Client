@@ -3,7 +3,7 @@ import { FaBook, FaCalendarAlt, FaShoppingCart, FaUsers } from "react-icons/fa";
 import { FaBagShopping, FaWallet } from "react-icons/fa6";
 import { ImSpoonKnife } from "react-icons/im";
 import { IoCalendarNumberSharp, IoCloseCircleSharp, IoHome, IoMail } from "react-icons/io5";
-import { MdMessage } from "react-icons/md";
+import { MdManageAccounts, MdMessage } from "react-icons/md";
 import { PiUsersThreeBold } from "react-icons/pi";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { NavLink, Outlet } from "react-router";
@@ -33,7 +33,8 @@ const Dashboard = () => {
                                                  <>
                                                         <li><NavLink className={({ isActive }) => `!bg-transparent font-cinzel flex items-center gap-2 ${isActive ? 'font-bold text-white' : 'text-black'}`} to='/dashboard/adminHome'><IoHome className="text-xl" />Admin Home</NavLink></li>
                                                         <li><NavLink className={({ isActive }) => `!bg-transparent font-cinzel flex items-center gap-2 ${isActive ? 'font-bold text-white' : 'text-black'}`} to='/dashboard/addItems'><ImSpoonKnife className="text-xl" />Add Items</NavLink></li>
-                                                        <li><NavLink className={({ isActive }) => `!bg-transparent font-cinzel flex items-center gap-2 ${isActive ? 'font-bold text-white' : 'text-black'}`} to='/dashboard/manageBookings'><FaBook className="text-xl" />Manage Bookings</NavLink></li>
+                                                        <li><NavLink className={({ isActive }) => `!bg-transparent font-cinzel flex items-center gap-2 ${isActive ? 'font-bold text-white' : 'text-black'}`} to='/dashboard/manageItems'><MdManageAccounts className="text-xl" />Manage Items</NavLink></li>
+                                                        <li><NavLink className={({ isActive }) => `!bg-transparent font-cinzel flex items-center gap-2 ${isActive ? 'font-bold text-white' : 'text-black'}`} to='/dashboard/manageBookings'><FaBook className="text-xl" />Manage Booking</NavLink></li>
                                                         <li><NavLink className={({ isActive }) => `!bg-transparent font-cinzel flex items-center gap-2 ${isActive ? 'font-bold text-white' : 'text-black'}`} to='/dashboard/allUsers'><FaUsers className="text-xl" />All Users</NavLink></li>
 
                                                         <div className="divider"></div>
@@ -72,6 +73,7 @@ const Dashboard = () => {
                                                         <>
                                                                <li><NavLink className={({ isActive }) => `!bg-transparent font-cinzel p-0 pb-4 ${isActive ? 'font-bold text-white' : 'text-black'}`} to='/dashboard/adminHome'><IoHome className="text-xl" /></NavLink></li>
                                                                <li><NavLink className={({ isActive }) => `!bg-transparent font-cinzel p-0 pb-4 ${isActive ? 'font-bold text-white' : 'text-black'}`} to='/dashboard/addItems'><ImSpoonKnife className="text-xl" /></NavLink></li>
+                                                               <li><NavLink className={({ isActive }) => `!bg-transparent font-cinzel p-0 pb-4 ${isActive ? 'font-bold text-white' : 'text-black'}`} to='/dashboard/manageItems'><MdManageAccounts className="text-xl" /></NavLink></li>
                                                                <li><NavLink className={({ isActive }) => `!bg-transparent font-cinzel p-0 pb-4 ${isActive ? 'font-bold text-white' : 'text-black'}`} to='/dashboard/manageBookings'><FaBook className="text-xl" /></NavLink></li>
                                                                <li><NavLink className={({ isActive }) => `!bg-transparent font-cinzel p-0 pb-4 ${isActive ? 'font-bold text-white' : 'text-black'}`} to='/dashboard/allUsers'><FaUsers className="text-xl" /></NavLink></li>
 

@@ -31,25 +31,25 @@ const ContactForm = () => {
                             <form onSubmit={handleSubmit(onSubmit)} className="card-body grid grid-cols-2 gap-4">
                                    <div className="form-control col-span-2 lg:col-span-1">
                                           <label className="label">
-                                                 <span className="label-text">Name</span>
+                                                 <span className="label-text font-semibold">Name</span>
                                           </label>
                                           <input type="text" placeholder="Enter Your Name" {...register("name")} name="name" className="input input-bordered" required />
                                    </div>
                                    <div className="form-control col-span-2 lg:col-span-1">
                                           <label className="label">
-                                                 <span className="label-text">Email</span>
+                                                 <span className="label-text font-semibold">Email</span>
                                           </label>
                                           <input type="email" placeholder="Enter Your Email" {...register("email")} name="email" className="input input-bordered" required />
                                    </div>
                                    <div className="form-control col-span-2">
                                           <label className="label">
-                                                 <span className="label-text">Phone</span>
+                                                 <span className="label-text font-semibold">Phone</span>
                                           </label>
                                           <input type="tel" placeholder="Enter Your Phone Number" {...register("phone")} name="phone" className="input input-bordered" required />
                                    </div>
                                    <div className="form-control col-span-2">
                                           <label className="label">
-                                                 <span className="label-text">Message</span>
+                                                 <span className="label-text font-semibold">Message</span>
                                           </label>
                                           <textarea name="message" cols='5' rows='4' {...register("message")} placeholder="Enter Your Message" className="textarea textarea-bordered" required></textarea>
                                    </div>

@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, useLoaderData } from "react-router";
 import Root from "../Layouts/Root/Root";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import ContactUs from "../Pages/ContactUs/ContactUs/ContactUs";
@@ -19,6 +19,9 @@ import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
 import AddItems from "../Pages/Dashboard/AddItems/AddItems";
 import ManageBookings from "../Pages/Dashboard/ManageBookings/ManageBookings";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
+import AdminRoutes from "./AdminRoutes";
+import ManageItems from "../Pages/Dashboard/ManageItems/ManageItems";
+import UpdateItems from "../Pages/Dashboard/UpdateItems/UpdateItems";
 
 
 const Routes = createBrowserRouter([
@@ -60,19 +63,28 @@ const Routes = createBrowserRouter([
                      // Admin Routes
                      {
                             path: 'adminHome',
-                            element: <AdminHome></AdminHome>
+                            element: <AdminRoutes><AdminHome></AdminHome></AdminRoutes>
                      },
                      {
                             path: 'addItems',
-                            element: <AddItems></AddItems>
+                            element: <AdminRoutes><AddItems></AddItems></AdminRoutes>
+                     },
+                     {
+                            path: 'manageItems',
+                            element: <AdminRoutes><ManageItems></ManageItems></AdminRoutes>
+                     },
+                     {
+                            path: 'updateItem/:id',
+                            element: <AdminRoutes><UpdateItems></UpdateItems></AdminRoutes>,
+                            loader: ({ params }) => fetch(`http://localhost:5000/menu/${params.id}`)
                      },
                      {
                             path: 'manageBookings',
-                            element: <ManageBookings></ManageBookings>
+                            element: <AdminRoutes><ManageBookings></ManageBookings></AdminRoutes>
                      },
                      {
                             path: 'allUsers',
-                            element: <AllUsers></AllUsers>
+                            element: <AdminRoutes><AllUsers></AllUsers></AdminRoutes>
                      },
                      // User Routes
                      {
