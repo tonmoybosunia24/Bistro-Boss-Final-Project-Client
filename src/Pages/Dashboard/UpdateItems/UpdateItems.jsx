@@ -50,7 +50,6 @@ const UpdateItems = () => {
                             toast.info("No changes were made.");
                      }
               } catch (error) {
-                     console.error("Error updating item:", error);
                      toast.error("Something went wrong. Try again!");
               }
        }

@@ -23,7 +23,6 @@ const AddItems = () => {
                             'Content-Type': 'multipart/form-data'
                      }
               })
-              console.log
               if (res.data.success) {
                      const menuItem = {
                             name: data.name,

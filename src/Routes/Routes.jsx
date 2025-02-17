@@ -22,6 +22,7 @@ import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import AdminRoutes from "./AdminRoutes";
 import ManageItems from "../Pages/Dashboard/ManageItems/ManageItems";
 import UpdateItems from "../Pages/Dashboard/UpdateItems/UpdateItems";
+import Payment from "../Pages/Dashboard/Payment/Payment";
 
 
 const Routes = createBrowserRouter([
@@ -88,16 +89,20 @@ const Routes = createBrowserRouter([
                      },
                      // User Routes
                      {
-                            path: 'cart',
-                            element: <Cart></Cart>
-                     },
-                     {
                             path: 'userHome',
                             element: <UserHome></UserHome>
                      },
                      {
                             path: 'reservation',
                             element: <Reservation></Reservation>
+                     },
+                     {
+                            path: 'cart',
+                            element: <Cart></Cart>
+                     },
+                     {
+                            path: 'payment',
+                            element: <Payment></Payment>
                      },
                      {
                             path: 'paymentHistory',
