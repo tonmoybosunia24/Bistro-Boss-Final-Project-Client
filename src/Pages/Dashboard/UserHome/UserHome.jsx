@@ -10,7 +10,6 @@ import { useQuery } from '@tanstack/react-query';
 const UserHome = () => {
 
        const { user } = useAuth()
-       console.log(user)
        const axiosSecure = useAxiosSecure();
        const { data: userStats } = useQuery({
               queryKey: ['user-stats', user?.email],
@@ -19,7 +18,6 @@ const UserHome = () => {
                      return res.data
               }
        })
-       console.log(userStats)
 
        return (
               <div>

@@ -23,7 +23,6 @@ const AddReviews = () => {
                      Suggestion: data.suggestion,
                      details: data.details
               };
-              console.log(reviewData);
               const reviewRes = await axiosPublic.post('/reviews', reviewData)
               if (reviewRes.data.insertedId) {
                      toast.success('Review Added SuccessFully')
