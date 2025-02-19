@@ -33,17 +33,19 @@ const MyBookings = () => {
                                                         <tr>
                                                                <th className="p-2">Name</th>
                                                                <th className="p-2">Email</th>
+                                                               <th className="p-2">Status</th>
                                                                <th className="p-2">Guest</th>
                                                                <th className="p-2">Date</th>
                                                         </tr>
                                                  </thead>
                                                  <tbody className="text-center">
-                                                        {reservation?.map(payment => (
-                                                               <tr key={payment._id} className="border-b text-xs">
-                                                                      <td className="p-2">{payment.name}</td>
-                                                                      <td className="p-2">{payment.email}</td>
-                                                                      <td className="p-2">{payment.guest}</td>
-                                                                      <td className="p-2">{payment.date}</td>
+                                                        {reservation?.map(bookings => (
+                                                               <tr key={bookings._id} className="border-b text-xs">
+                                                                      <td className="p-2">{bookings.name}</td>
+                                                                      <td className="p-2">{bookings.email}</td>
+                                                                      <td className="p-2">{bookings.status}</td>
+                                                                      <td className="p-2">{bookings.guest}</td>
+                                                                      <td className="p-2">{bookings.date}</td>
                                                                </tr>
                                                         ))}
                                                  </tbody>

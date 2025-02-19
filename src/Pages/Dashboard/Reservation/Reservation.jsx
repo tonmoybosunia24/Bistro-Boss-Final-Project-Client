@@ -13,7 +13,16 @@ const Reservation = () => {
        const axiosSecure = useAxiosSecure()
        const { user } = useAuth();
        const onsubmit = async (data) => {
-              const res = await axiosSecure.post('/reservation', data)
+              const bookings = {
+                     name: data.name,
+                     email: data.email,
+                     phone: data.phone,
+                     date: data.date,
+                     time: data.time,
+                     guest: data.guest,
+                     status: 'Pending'
+              }
+              const res = await axiosSecure.post('/reservation', bookings)
               if (res.data.insertedId) {
                      toast.success('Reservation Apply Successful')
               }
